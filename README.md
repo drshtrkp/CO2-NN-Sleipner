@@ -665,9 +665,9 @@ This work reproduces and extends:
 
 Questions? Want to collaborate? Reach out!
 
-- **Email:** pated2126@gmail.com  
+- **Email:** drshtrkp@outlook.com  
 - **GitHub:** [@drshtakp](https://github.com/drshtakp)  
-- **LinkedIn:** [linkedin.com/in/drashti-patel](https://www.linkedin.com/in/drashti-patel) *(update with your real link)*
+- **LinkedIn:** [linkedin.com/in/drashti-patel](https://www.linkedin.com/in/drshtakp/)
 
 ---
 
