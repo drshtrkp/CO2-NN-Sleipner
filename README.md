@@ -667,7 +667,7 @@ Questions? Want to collaborate? Reach out!
 
 - **Email:** drshtrkp@outlook.com  
 - **GitHub:** [@drshtakp](https://github.com/drshtakp)  
-- **LinkedIn:** [linkedin.com/in/drashti-patel](https://www.linkedin.com/in/drshtakp/)
+- **LinkedIn:** [https://www.linkedin.com/in/drshtakp/]
 
 ---
 
