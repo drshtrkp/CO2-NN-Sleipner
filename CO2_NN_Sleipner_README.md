@@ -1,6 +1,6 @@
 # CO₂-NN-Sleipner: Deep Learning for Carbon Storage Monitoring
 
-**Drashti Patel | Geophysics Student | Purdue University | January 2026**
+**Darshita Patel | EAPS-GDSP Student | Purdue University | May 2025**
 
 A portfolio project using 3D U-Net deep learning to automatically detect CO₂ plumes in seismic data from the world's first commercial carbon storage site.
 
@@ -153,11 +153,11 @@ This neural network approach solves all three:
 
 When I applied the model to earlier years (1999-2008), the predictions:
 
-✅ **Show plume growth over time** (small in 1999 → large by 2010)  
-✅ **Match known geology** (CO₂ accumulates in high-permeability sand layers L1-L9)  
-✅ **Are spatially continuous** (no random scattered pixels)  
-✅ **Handle noise well** (doesn't mistake processing artifacts for CO₂)  
-✅ **Capture physical behavior** (slower expansion in bottom layer L1 due to buoyancy)
+**Show plume growth over time** (small in 1999 → large by 2010)  
+**Match known geology** (CO₂ accumulates in high-permeability sand layers L1-L9)  
+**Are spatially continuous** (no random scattered pixels)  
+**Handle noise well** (doesn't mistake processing artifacts for CO₂)  
+**Capture physical behavior** (slower expansion in bottom layer L1 due to buoyancy)
 
 **Temporal generalization example:**
 - **Layer L9 (top):** 1999 shows a single bright spot (CO₂ just reached the top), expands steadily through 2010
@@ -271,12 +271,12 @@ The notebooks show the iterative research process - not everything worked first 
 
 If I were deploying this at a CCS monitoring company:
 
-### ✅ **Deploy the 3D U-Net for routine monitoring**
+###  **Deploy the 3D U-Net for routine monitoring**
 - **Use case:** Automatically process new seismic surveys as they come in
 - **Benefit:** Reduce interpretation time from weeks to hours
 - **Guardrail:** Always have a geophysicist QC the output (model is a tool, not a replacement)
 
-### ⚠️ **But don't trust it blindly - add uncertainty quantification**
+###  **But don't trust it blindly - add uncertainty quantification**
 
 The current model outputs binary predictions (CO₂ vs. no-CO₂). In production, I'd modify it to output:
 - **Probability estimates** (0-100% confidence)
@@ -284,7 +284,7 @@ The current model outputs binary predictions (CO₂ vs. no-CO₂). In production
 
 Why? Because in geophysics, being wrong matters. If you miss a leak, CO₂ could escape. If you over-interpret, you waste resources drilling unnecessary monitoring wells.
 
-### 🔬 **Next steps for research**
+###  **Next steps for research**
 
 **Short-term improvements:**
 1. **Active learning:** When the model is uncertain, flag those regions for human labeling → retrain
@@ -672,6 +672,5 @@ Questions? Want to collaborate? Reach out!
 ---
 
 **Last Updated:** January 2026  
-Built over winter break as a deep dive into scientific machine learning and carbon storage monitoring.
 
 *If you found this useful or interesting, feel free to ⭐ the repo!*
