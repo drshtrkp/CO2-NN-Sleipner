@@ -637,18 +637,25 @@ This work reproduces and extends:
 
 > Li, B., & Li, Y. E. (2021). Neural network-based CO₂ interpretation from 4D Sleipner seismic images. *Journal of Geophysical Research: Solid Earth*, 126(12), e2021JB022524. https://doi.org/10.1029/2021JB022524
 
-**Key contributions from the original paper:**
-1. First application of 3D U-Net to real (not synthetic) CCS monitoring data
-2. Demonstrated temporal generalization (train on 2010, test on 1999-2008)
-3. Proved robustness to processing mismatch through multi-vintage training
-4. Showed NN learns both amplitude difference AND structural similarity
-5. Compared 2D vs. 3D U-Nets under sparse labeling scenarios
+## My Implementation
 
-**My implementation:**
 - Reproduced the core 3D U-Net architecture and training methodology
 - Verified the temporal consistency results across multiple vintages
 - Explored the model's interpretation mechanism through controlled tests
 - Documented the workflow for future CCS monitoring applications
+
+### Code Modifications & Optimization
+
+- **Modular refactor:** Restructured the workflow into separate modules (data loading, patch extraction, model, training, inference) driven by a single config file, so any experiment can be reproduced with one command.
+- **Architecture re-implementation:** Re-built the 3D U-Net in [PyTorch / TensorFlow] and checked it against the paper's specification (encoder–decoder depth, filter counts, skip connections).
+- **Memory-efficient data pipeline:** Replaced full-cube loading with memory-mapped seismic volumes and on-the-fly 3D patch extraction, cutting peak RAM use by [X]%.
+- **Faster training:** Added mixed-precision (AMP) training and gradient accumulation to fit larger 3D patches on a single [GPU], cutting training time from [X h] to [Y h].
+- **Class-imbalance handling:** Combined binary cross-entropy with Dice loss, since CO₂-bearing voxels are a small fraction of each volume. Added learning-rate scheduling and early stopping on a validation split.
+- **Data augmentation:** Applied flips, amplitude scaling and additive noise to improve robustness to processing differences between vintages.
+- **Seamless full-volume inference:** Used overlapping sliding-window prediction with [Gaussian] blending to remove patch-boundary artifacts.
+- **Reproducibility:** Fixed random seeds and logged hyperparameters and metrics with [TensorBoard / W&B] so results are consistent from run to run.
+- **Quantitative evaluation:** Added Dice/IoU and precision/recall against the 2010 interpretation, plus per-vintage plume area/volume tracking (1999–2010), to measure temporal consistency rather than just inspecting it visually.
+- **Controlled interpretation tests:** Compared baseline-only, monitor-only and difference inputs, and applied amplitude shifts/scaling, to see whether the network depends on amplitude difference, structural similarity, or both.
 
 ---
 
