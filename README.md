@@ -481,7 +481,7 @@ CO2-NN-Sleipner/
 - **Better metrics:** Geophysicists care about plume *volume* and *migration rate*, not just pixel accuracy
 
 **On the engineering side:**
-- **Docker container:** Make it easier for others to reproduce (my setup is messy)
+- **Docker container:** Make it easier for others to reproduce.
 - **Weights & Biases:** Track experiments systematically instead of manual logs
 - **Grad-CAM visualization:** Show *which parts* of the seismic the model is focusing on
 
